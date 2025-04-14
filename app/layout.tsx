@@ -15,7 +15,6 @@ const inter = Open_Sans({
 export const metadata = {
   title: "Hoomo - Мобильные приложения и e-commerce платформы",
   description: "Создаем современные решения под ключ для вашего бизнеса",
-  // generator: "v0.dev",
 };
 
 export default function RootLayout({
