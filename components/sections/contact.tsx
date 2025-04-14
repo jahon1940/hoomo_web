@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Send } from "lucide-react";
 import { FormSubmitButton } from "../form-submit-button";
 import { useRef, useState } from "react";
 import { SuccessModal } from "../success-modal";
@@ -8,10 +7,34 @@ const Contact = () => {
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const form = formRef.current;
+    if (!form) return;
+
+    const name = (form.querySelector("#name") as HTMLInputElement)?.value;
+    const email = (form.querySelector("#email") as HTMLInputElement)?.value;
+    const message = (form.querySelector("#message") as HTMLTextAreaElement)
+      ?.value;
+
+    const botToken = "7714688405:AAHWRmehW1okIEFFA_DjhJYyw4EYAshTVkc";
+    const chatId = "-1002554967796";
+    const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n💬 Сообщение: ${message}`;
+
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+      }),
+    });
+
     setIsSuccessModalOpen(true);
-    formRef.current?.reset();
+    form.reset();
   };
 
   return (
