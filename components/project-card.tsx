@@ -28,20 +28,20 @@ export function ProjectCard({
       whileHover={{ y: -5 }}
       className="group relative overflow-hidden rounded-2xl"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-70 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-100 z-10" />
       <div
         className={`absolute inset-0 bg-gradient-to-br ${color} mix-blend-multiply opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10`}
       />
 
-      {/* <Image
+      <Image
         src={image || "/placeholder.svg"}
         alt={title}
         width={600}
         height={400}
-        className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-      /> */}
+        className="w-full h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-110"
+      />
 
-      <div className="w-full bg-white/50 h-[320px]"></div>
+      {/* <div className="w-full bg-white/50 h-[320px]"></div> */}
 
       <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 text-white">
         <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors">

@@ -97,18 +97,18 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Приложение для онлайн-ретейла (iOS + Android)",
+      title: "Оптовая платформа Mirel для канцелярии и офиса",
       description:
-        "Комплексное решение для крупного ретейлера с интеграцией складского учета",
-      image: "/placeholder.svg?height=400&width=600",
-      color: "from-teal-500 to-cyan-600",
+        "Мобильное приложение и веб-платформа для оптовых закупок канцелярских товаров с отслеживанием заказов, бонусной системой и финансовой аналитикой",
+      image: "/mirel-uz-preview.png",
+      color: "from-blue-600 to-sky-500",
     },
     {
-      title: "Shopify-магазин с кастомным дизайном",
+      title: "Интернет-магазин Kansler для бизнеса и офиса",
       description:
-        "Уникальный дизайн и расширенный функционал для бренда одежды",
-      image: "/placeholder.svg?height=400&width=600",
-      color: "from-emerald-500 to-green-600",
+        "Многофункциональный e-commerce проект с каталогом товаров, фильтрацией, системой управления заказами и бонусной программой",
+      image: "/kansler-uz-preview.png",
+      color: "from-green-500 to-emerald-600",
     },
   ];
 
