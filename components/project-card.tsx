@@ -8,6 +8,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  mimage: string | undefined;
   color: string;
   index: number;
 }
@@ -18,6 +19,7 @@ export function ProjectCard({
   image,
   color,
   index,
+  mimage,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -40,6 +42,16 @@ export function ProjectCard({
         height={400}
         className="w-full h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-110"
       />
+
+      {mimage ? (
+        <Image
+          src={mimage}
+          alt={title}
+          width={600}
+          height={400}
+          className="absolute right-10 top-10 object-contain rounded-xl w-[180px] shadow-2xl border-4 border-white/50"
+        />
+      ) : null}
 
       {/* <div className="w-full bg-white/50 h-[320px]"></div> */}
 

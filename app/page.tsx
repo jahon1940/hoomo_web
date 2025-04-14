@@ -101,6 +101,7 @@ export default function Home() {
       description:
         "Мобильное приложение и веб-платформа для оптовых закупок канцелярских товаров с отслеживанием заказов, бонусной системой и финансовой аналитикой",
       image: "/mirel-uz-preview.png",
+      mimage: "/mirel-uz-m-preview.jpg",
       color: "from-blue-600 to-sky-500",
     },
     {
@@ -790,6 +791,7 @@ export default function Home() {
                   title={project.title}
                   description={project.description}
                   image={project.image}
+                  mimage={project.mimage}
                   color={project.color}
                   index={index}
                 />
