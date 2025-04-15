@@ -134,7 +134,8 @@ const Intro = () => {
                         </div>
                         <div>
                           <h3 className="font-medium text-white">
-                            Мобильное приложение
+                            Разрабатываем функциональные и уникальные сайты
+                            специально для вашего бизнеса
                           </h3>
                           <p className="text-xs text-gray-400">iOS & Android</p>
                         </div>
