@@ -5,14 +5,16 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'fram
 
 import { HeroBackground } from '@/components/hero-background'
 
-import Portfolio from '@/components/sections/portfolio'
 import Header from '@/components/layout/header'
-import Intro from '@/components/sections/intro'
-import WeCreate from '@/components/sections/we-create'
-import OurServices from '@/components/sections/our-services'
 import Footer from '@/components/layout/footer'
-import Testimonials from '@/components/sections/testimonials'
+
+import Intro from '@/components/sections/intro'
 import Contact from '@/components/sections/contact'
+import WeCreate from '@/components/sections/we-create'
+import Portfolio from '@/components/sections/portfolio'
+import OurServices from '@/components/sections/our-services'
+import Testimonials from '@/components/sections/testimonials'
+import DevelopmentStages from '@/components/sections/development-stages'
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -66,6 +68,8 @@ export default function Home() {
         <WeCreate />
 
         <OurServices />
+
+        <DevelopmentStages />
 
         <Portfolio />
 
