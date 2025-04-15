@@ -1,50 +1,47 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, X } from "lucide-react";
+import { useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { CheckCircle, X } from 'lucide-react'
 
 interface SuccessModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  message?: string;
+  isOpen: boolean
+  onClose: () => void
+  message?: string
 }
 
 export function SuccessModal({
   isOpen,
   onClose,
-  message = "Ваша заявка успешно отправлена!",
+  message = 'Ваша заявка успешно отправлена!',
 }: SuccessModalProps) {
-  // Close modal when Escape key is pressed
   useEffect(() => {
     const handleEscapeKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        onClose();
+      if (e.key === 'Escape' && isOpen) {
+        onClose()
       }
-    };
+    }
 
-    document.addEventListener("keydown", handleEscapeKey);
-    return () => document.removeEventListener("keydown", handleEscapeKey);
-  }, [isOpen, onClose]);
+    document.addEventListener('keydown', handleEscapeKey)
+    return () => document.removeEventListener('keydown', handleEscapeKey)
+  }, [isOpen, onClose])
 
-  // Prevent scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto'
     }
     return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
 
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -55,16 +52,14 @@ export function SuccessModal({
             aria-hidden="true"
           />
 
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md"
           >
             <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl overflow-hidden">
-              {/* Close button */}
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
@@ -74,11 +69,10 @@ export function SuccessModal({
               </button>
 
               <div className="p-6 md:p-8 text-center">
-                {/* Success animation */}
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ type: "spring", delay: 0.1, duration: 0.5 }}
+                  transition={{ type: 'spring', delay: 0.1, duration: 0.5 }}
                   className="mx-auto mb-6 relative"
                 >
                   <div className="w-20 h-20 rounded-full bg-teal-900/30 flex items-center justify-center mx-auto">
@@ -143,5 +137,5 @@ export function SuccessModal({
         </>
       )}
     </AnimatePresence>
-  );
+  )
 }

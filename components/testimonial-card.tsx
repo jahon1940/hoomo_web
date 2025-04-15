@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { Quote } from "lucide-react";
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Quote } from 'lucide-react'
 
 interface TestimonialCardProps {
-  quote: string;
-  author: string;
-  position: string;
-  company: string;
-  image: string;
-  index: number;
+  quote: string
+  author: string
+  position: string
+  company: string
+  image: string
+  index: number
 }
 
 export function TestimonialCard({
@@ -38,9 +38,7 @@ export function TestimonialCard({
       </div>
 
       <div className="relative z-10 flex-1 flex flex-col">
-        <p className="text-gray-300 flex-1 mb-6 italic relative z-10">
-          {quote}
-        </p>
+        <p className="text-gray-300 flex-1 mb-6 italic relative z-10">{quote}</p>
 
         {/* <div className="flex items-center"> */}
         {/* <div className="flex-shrink-0 mr-4">
@@ -64,5 +62,5 @@ export function TestimonialCard({
         {/* </div> */}
       </div>
     </motion.div>
-  );
+  )
 }

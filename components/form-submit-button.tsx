@@ -1,50 +1,47 @@
-"use client";
+'use client'
 
-import type React from "react";
+import { useState } from 'react'
+import { Loader2 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import type { ReactNode } from 'react'
 
 interface FormSubmitButtonProps {
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
+  children: ReactNode
+  className?: string
+  onClick?: () => void
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export function FormSubmitButton({
   children,
-  className = "",
+  className = '',
   onClick,
-  type = "submit",
+  type = 'submit',
 }: FormSubmitButtonProps) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleClick = () => {
-    if (type !== "submit") {
-      setIsLoading(true);
+    if (type !== 'submit') {
+      setIsLoading(true)
 
-      // Simulate loading for demo purposes
       setTimeout(() => {
-        setIsLoading(false);
-        if (onClick) onClick();
-      }, 1500);
+        setIsLoading(false)
+        if (onClick) onClick()
+      }, 1500)
     }
-  };
+  }
 
   const handleSubmit = () => {
-    setIsLoading(true);
-    // The loading state will be reset when the form submission completes
-    // and the success modal appears
-  };
+    setIsLoading(true)
+  }
 
   return (
     <Button
       type={type}
       className={`relative ${className}`}
-      onClick={type !== "submit" ? handleClick : undefined}
-      onSubmit={type === "submit" ? handleSubmit : undefined}
+      onClick={type !== 'submit' ? handleClick : undefined}
+      onSubmit={type === 'submit' ? handleSubmit : undefined}
       disabled={isLoading}
     >
       {isLoading && (
@@ -54,5 +51,5 @@ export function FormSubmitButton({
       )}
       {children}
     </Button>
-  );
+  )
 }

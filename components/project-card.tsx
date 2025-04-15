@@ -1,26 +1,19 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  mimage: string | undefined;
-  color: string;
-  index: number;
+  title: string
+  description: string
+  image: string
+  mimage: string | undefined
+  color: string
+  index: number
 }
 
-export function ProjectCard({
-  title,
-  description,
-  image,
-  color,
-  index,
-  mimage,
-}: ProjectCardProps) {
+export function ProjectCard({ title, description, image, color, index, mimage }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,7 +29,7 @@ export function ProjectCard({
       />
 
       <Image
-        src={image || "/placeholder.svg"}
+        src={image || '/placeholder.svg'}
         alt={title}
         width={600}
         height={400}
@@ -56,9 +49,7 @@ export function ProjectCard({
       {/* <div className="w-full bg-white/50 h-[320px]"></div> */}
 
       <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 text-white">
-        <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors">
-          {title}
-        </h3>
+        <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors">{title}</h3>
         <p className="text-sm text-white/80 mb-4 max-w-md">{description}</p>
 
         {/* <motion.div
@@ -78,5 +69,5 @@ export function ProjectCard({
         </motion.div> */}
       </div>
     </motion.div>
-  );
+  )
 }

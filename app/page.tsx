@@ -1,59 +1,50 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 
-import { HeroBackground } from "@/components/hero-background";
+import { HeroBackground } from '@/components/hero-background'
 
-import Portfolio from "@/components/sections/portfolio";
-import Header from "@/components/layout/header";
-import Intro from "@/components/sections/intro";
-import WeCreate from "@/components/sections/we-create";
-import OurServices from "@/components/sections/our-services";
-import Footer from "@/components/layout/footer";
-import Testimonials from "@/components/sections/testimonials";
-import Contact from "@/components/sections/contact";
+import Portfolio from '@/components/sections/portfolio'
+import Header from '@/components/layout/header'
+import Intro from '@/components/sections/intro'
+import WeCreate from '@/components/sections/we-create'
+import OurServices from '@/components/sections/our-services'
+import Footer from '@/components/layout/footer'
+import Testimonials from '@/components/sections/testimonials'
+import Contact from '@/components/sections/contact'
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const containerRef = useRef<HTMLDivElement>(null)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
 
-  const smoothMouseX = useSpring(mouseX, { damping: 50, stiffness: 400 });
-  const smoothMouseY = useSpring(mouseY, { damping: 50, stiffness: 400 });
+  const smoothMouseX = useSpring(mouseX, { damping: 50, stiffness: 400 })
+  const smoothMouseY = useSpring(mouseY, { damping: 50, stiffness: 400 })
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
+      mouseX.set(e.clientX)
+      mouseY.set(e.clientY)
+    }
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [mouseX, mouseY])
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"],
-  });
+    offset: ['start start', 'end end'],
+  })
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
 
   return (
     <div
       ref={containerRef}
       className="relative min-h-screen overflow-hidden bg-gray-950 text-gray-100"
     >
-      <motion.div
-        className="fixed inset-0 z-0 pointer-events-none"
-        style={{ y: backgroundY }}
-      >
+      <motion.div className="fixed inset-0 z-0 pointer-events-none" style={{ y: backgroundY }}>
         <HeroBackground />
       </motion.div>
 
@@ -62,8 +53,8 @@ export default function Home() {
         style={{
           x: smoothMouseX,
           y: smoothMouseY,
-          translateX: "-50%",
-          translateY: "-50%",
+          translateX: '-50%',
+          translateY: '-50%',
         }}
       />
 
@@ -85,5 +76,5 @@ export default function Home() {
         <Footer />
       </div>
     </div>
-  );
+  )
 }

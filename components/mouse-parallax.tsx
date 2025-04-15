@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import type React from "react"
+import { useRef, useState, useEffect } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
-import { useRef, useState, useEffect, type ReactNode } from "react"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import type { ReactNode, MouseEvent } from 'react'
 
 interface MouseParallaxProps {
   children: ReactNode
@@ -35,20 +35,25 @@ export function MouseParallax({ children, className, strength = 20 }: MouseParal
     }
 
     updateBounds()
-    window.addEventListener("resize", updateBounds)
+    window.addEventListener('resize', updateBounds)
 
     return () => {
-      window.removeEventListener("resize", updateBounds)
+      window.removeEventListener('resize', updateBounds)
     }
   }, [])
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     mouseX.set(e.clientX - bounds.left)
     mouseY.set(e.clientY - bounds.top)
   }
 
   return (
-    <motion.div ref={ref} className={className} onMouseMove={handleMouseMove} style={{ x: moveX, y: moveY }}>
+    <motion.div
+      ref={ref}
+      className={className}
+      onMouseMove={handleMouseMove}
+      style={{ x: moveX, y: moveY }}
+    >
       {children}
     </motion.div>
   )

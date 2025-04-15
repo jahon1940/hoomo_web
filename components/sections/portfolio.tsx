@@ -1,26 +1,26 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
-import { ProjectCard } from "../project-card";
+import { ProjectCard } from '../project-card'
 
 const Portfolio = () => {
   const projects = [
     {
-      title: "Оптовая платформа Mirel для канцелярии и офиса",
+      title: 'Оптовая платформа Mirel для канцелярии и офиса',
       description:
-        "Мобильное приложение и веб-платформа для оптовых закупок канцелярских товаров с отслеживанием заказов, бонусной системой и финансовой аналитикой",
-      image: "/mirel-uz-preview.png",
-      mimage: "/mirel-uz-m-preview.jpg",
-      color: "from-blue-600 to-sky-500",
+        'Мобильное приложение и веб-платформа для оптовых закупок канцелярских товаров с отслеживанием заказов, бонусной системой и финансовой аналитикой',
+      image: '/mirel-uz-preview.png',
+      mimage: '/mirel-uz-m-preview.jpg',
+      color: 'from-blue-600 to-sky-500',
     },
     {
-      title: "Интернет-магазин Kansler для бизнеса и офиса",
+      title: 'Интернет-магазин Kansler для бизнеса и офиса',
       description:
-        "Многофункциональный e-commerce проект с каталогом товаров, фильтрацией, системой управления заказами и бонусной программой",
-      image: "/kansler-uz-preview.png",
-      mimage: "/kansler-uz-m-preview.jpg",
-      color: "from-green-500 to-emerald-600",
+        'Многофункциональный e-commerce проект с каталогом товаров, фильтрацией, системой управления заказами и бонусной программой',
+      image: '/kansler-uz-preview.png',
+      mimage: '/kansler-uz-m-preview.jpg',
+      color: 'from-green-500 to-emerald-600',
     },
-  ];
+  ]
 
   return (
     <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
@@ -43,9 +43,7 @@ const Portfolio = () => {
             className="inline-flex items-center space-x-2 bg-gray-800 px-4 py-2 rounded-full border border-gray-700 shadow-sm mb-4"
           >
             <span className="flex h-2 w-2 rounded-full bg-teal-400"></span>
-            <span className="text-sm font-medium text-gray-200">
-              Наше портфолио
-            </span>
+            <span className="text-sm font-medium text-gray-200">Наше портфолио</span>
           </motion.div>
 
           <motion.h2
@@ -65,8 +63,8 @@ const Portfolio = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-lg text-gray-400"
           >
-            Ознакомьтесь с нашими недавними работами, которые помогли клиентам
-            достичь их бизнес-целей
+            Ознакомьтесь с нашими недавними работами, которые помогли клиентам достичь их
+            бизнес-целей
           </motion.p>
         </motion.div>
 
@@ -102,7 +100,7 @@ const Portfolio = () => {
     </motion.div> */}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Portfolio

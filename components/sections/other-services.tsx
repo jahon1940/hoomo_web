@@ -1,32 +1,28 @@
-import { motion } from "framer-motion";
-import { BarChart3, Brain, Globe, Palette } from "lucide-react";
+import { motion } from 'framer-motion'
+import { BarChart3, Brain, Globe, Palette } from 'lucide-react'
 
 const otherServices = [
   {
     icon: <Palette className="h-6 w-6 text-teal-400" />,
-    title: "Брендинг и UI/UX дизайн",
-    description:
-      "Создаем уникальный визуальный язык и пользовательский опыт для вашего бренда",
+    title: 'Брендинг и UI/UX дизайн',
+    description: 'Создаем уникальный визуальный язык и пользовательский опыт для вашего бренда',
   },
   {
     icon: <Brain className="h-6 w-6 text-teal-400" />,
-    title: "Консалтинг по цифровой трансформации",
-    description:
-      "Помогаем бизнесу адаптироваться к цифровой эпохе и внедрять инновации",
+    title: 'Консалтинг по цифровой трансформации',
+    description: 'Помогаем бизнесу адаптироваться к цифровой эпохе и внедрять инновации',
   },
   {
     icon: <BarChart3 className="h-6 w-6 text-teal-400" />,
-    title: "BI-дашборды и внутренние инструменты",
-    description:
-      "Разрабатываем системы аналитики и инструменты для оптимизации бизнес-процессов",
+    title: 'BI-дашборды и внутренние инструменты',
+    description: 'Разрабатываем системы аналитики и инструменты для оптимизации бизнес-процессов',
   },
   {
     icon: <Globe className="h-6 w-6 text-teal-400" />,
-    title: "Корпоративные сайты",
-    description:
-      "Создаем представительства в интернете с акцентом на конверсию и имидж",
+    title: 'Корпоративные сайты',
+    description: 'Создаем представительства в интернете с акцентом на конверсию и имидж',
   },
-];
+]
 
 const OtherServices = () => {
   return (
@@ -50,9 +46,7 @@ const OtherServices = () => {
             className="inline-flex items-center space-x-2 bg-gray-800 px-4 py-2 rounded-full border border-gray-700 shadow-sm mb-4"
           >
             <span className="flex h-2 w-2 rounded-full bg-teal-400"></span>
-            <span className="text-sm font-medium text-gray-200">
-              Дополнительно
-            </span>
+            <span className="text-sm font-medium text-gray-200">Дополнительно</span>
           </motion.div>
 
           <motion.h2
@@ -72,8 +66,8 @@ const OtherServices = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-lg text-gray-400"
           >
-            Помимо основных направлений, мы предлагаем ряд дополнительных услуг
-            для комплексного развития вашего бизнеса
+            Помимо основных направлений, мы предлагаем ряд дополнительных услуг для комплексного
+            развития вашего бизнеса
           </motion.p>
         </motion.div>
 
@@ -104,7 +98,7 @@ const OtherServices = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default OtherServices;
+export default OtherServices

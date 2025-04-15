@@ -1,21 +1,16 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { motion } from 'framer-motion'
+import type { ReactNode } from 'react'
 
 interface ServiceCardProps {
-  icon: ReactNode;
-  title: string;
-  description: string;
-  index: number;
+  icon: ReactNode
+  title: string
+  description: string
+  index: number
 }
 
-export function ServiceCard({
-  icon,
-  title,
-  description,
-  index,
-}: ServiceCardProps) {
+export function ServiceCard({ icon, title, description, index }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
@@ -64,5 +59,5 @@ export function ServiceCard({
         </div>
       </div>
     </motion.div>
-  );
+  )
 }

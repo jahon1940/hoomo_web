@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { useRef, type ReactNode } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, type ReactNode } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 interface TextRevealProps {
-  children: ReactNode;
-  delay?: number;
+  children: ReactNode
+  delay?: number
 }
 
 export function TextReveal({ children, delay = 0 }: TextRevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   const variants = {
     hidden: { opacity: 0 },
@@ -20,12 +20,12 @@ export function TextReveal({ children, delay = 0 }: TextRevealProps) {
         delay: i * 0.1 + delay,
       },
     }),
-  };
+  }
 
   const renderWords = () => {
-    const text = children?.toString() || "";
+    const text = children?.toString() || ''
 
-    const words = text.split(" ");
+    const words = text.split(' ')
 
     return (
       <span className="inline-flex gap-1.5">
@@ -35,16 +35,16 @@ export function TextReveal({ children, delay = 0 }: TextRevealProps) {
             custom={i}
             variants={variants}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            animate={isInView ? 'visible' : 'hidden'}
             className="inline-block"
           >
             {word}
-            {i !== words.length - 1 && " "}
+            {i !== words.length - 1 && ' '}
           </motion.span>
         ))}
       </span>
-    );
-  };
+    )
+  }
 
-  return <div ref={ref}>{renderWords()}</div>;
+  return <div ref={ref}>{renderWords()}</div>
 }

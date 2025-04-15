@@ -1,34 +1,35 @@
-import { motion } from "framer-motion";
-import { Button } from "../ui/button";
-import { ServiceCard } from "../service-card";
-import { ShoppingCart, Smartphone, Target, Wrench } from "lucide-react";
+import { motion } from 'framer-motion'
+import { ShoppingCart, Smartphone, Target, Wrench } from 'lucide-react'
+
+import { Button } from '../ui/button'
+import { ServiceCard } from '../service-card'
 
 const services = [
   {
     icon: <Smartphone className="h-6 w-6 text-teal-400" />,
-    title: "Разработка мобильных приложений",
+    title: 'Разработка мобильных приложений',
     description:
-      "Создаем нативные и кроссплатформенные приложения для iOS и Android с фокусом на пользовательский опыт и производительность",
+      'Создаем нативные и кроссплатформенные приложения для iOS и Android с фокусом на пользовательский опыт и производительность',
   },
   {
     icon: <ShoppingCart className="h-6 w-6 text-teal-400" />,
-    title: "Создание интернет-магазинов",
+    title: 'Создание интернет-магазинов',
     description:
-      "Разрабатываем e-commerce платформы с оптимизированными воронками продаж и интуитивным интерфейсом",
+      'Разрабатываем e-commerce платформы с оптимизированными воронками продаж и интуитивным интерфейсом',
   },
   {
     icon: <Wrench className="h-6 w-6 text-teal-400" />,
-    title: "Поддержка и сопровождение",
+    title: 'Поддержка и сопровождение',
     description:
-      "Обеспечиваем техническую поддержку, обновления и масштабирование ваших цифровых продуктов",
+      'Обеспечиваем техническую поддержку, обновления и масштабирование ваших цифровых продуктов',
   },
   {
     icon: <Target className="h-6 w-6 text-teal-400" />,
-    title: "Маркетинг, аналитика и оптимизация",
+    title: 'Маркетинг, аналитика и оптимизация',
     description:
-      "Помогаем анализировать данные, оптимизировать конверсию и увеличивать эффективность ваших цифровых активов",
+      'Помогаем анализировать данные, оптимизировать конверсию и увеличивать эффективность ваших цифровых активов',
   },
-];
+]
 
 const OurServices = () => {
   return (
@@ -53,9 +54,7 @@ const OurServices = () => {
               className="inline-flex items-center space-x-2 bg-gray-800 px-4 py-2 rounded-full border border-gray-700 shadow-sm mb-4"
             >
               <span className="flex h-2 w-2 rounded-full bg-teal-400"></span>
-              <span className="text-sm font-medium text-gray-200">
-                Что мы предлагаем
-              </span>
+              <span className="text-sm font-medium text-gray-200">Что мы предлагаем</span>
             </motion.div>
 
             <motion.h2
@@ -75,8 +74,8 @@ const OurServices = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-lg text-gray-400 mb-8"
             >
-              Мы предлагаем полный спектр услуг по разработке цифровых продуктов
-              — от идеи до запуска и поддержки
+              Мы предлагаем полный спектр услуг по разработке цифровых продуктов — от идеи до
+              запуска и поддержки
             </motion.p>
 
             {/* <motion.div
@@ -116,7 +115,7 @@ const OurServices = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default OurServices;
+export default OurServices

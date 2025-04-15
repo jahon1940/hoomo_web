@@ -1,44 +1,44 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Smartphone, ShoppingCart, Wrench, Target, Palette, Brain } from "lucide-react"
+import { motion } from 'framer-motion'
+import { Smartphone, ShoppingCart, Wrench, Target, Palette, Brain } from 'lucide-react'
 
 export function FloatingIcons() {
   const icons = [
     {
       icon: <Smartphone className="h-6 w-6 text-teal-400" />,
-      x: "10%",
-      y: "20%",
+      x: '10%',
+      y: '20%',
       delay: 0,
     },
     {
       icon: <ShoppingCart className="h-6 w-6 text-cyan-400" />,
-      x: "80%",
-      y: "15%",
+      x: '80%',
+      y: '15%',
       delay: 0.5,
     },
     {
       icon: <Wrench className="h-6 w-6 text-blue-400" />,
-      x: "70%",
-      y: "70%",
+      x: '70%',
+      y: '70%',
       delay: 1,
     },
     {
       icon: <Target className="h-6 w-6 text-orange-400" />,
-      x: "20%",
-      y: "80%",
+      x: '20%',
+      y: '80%',
       delay: 1.5,
     },
     {
       icon: <Palette className="h-6 w-6 text-green-400" />,
-      x: "90%",
-      y: "40%",
+      x: '90%',
+      y: '40%',
       delay: 2,
     },
     {
       icon: <Brain className="h-6 w-6 text-emerald-400" />,
-      x: "30%",
-      y: "40%",
+      x: '30%',
+      y: '40%',
       delay: 2.5,
     },
   ]
@@ -63,7 +63,7 @@ export function FloatingIcons() {
               repeat: Number.POSITIVE_INFINITY,
               duration: 3,
               delay: item.delay,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           >
             {item.icon}

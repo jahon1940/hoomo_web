@@ -1,42 +1,42 @@
-import { motion } from "framer-motion";
-import { FormSubmitButton } from "../form-submit-button";
-import { useRef, useState } from "react";
-import { SuccessModal } from "../success-modal";
+import { motion } from 'framer-motion'
+import { useRef, useState } from 'react'
+
+import { SuccessModal } from '../success-modal'
+import { FormSubmitButton } from '../form-submit-button'
 
 const Contact = () => {
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const form = formRef.current;
-    if (!form) return;
+    const form = formRef.current
+    if (!form) return
 
-    const name = (form.querySelector("#name") as HTMLInputElement)?.value;
-    const email = (form.querySelector("#email") as HTMLInputElement)?.value;
-    const message = (form.querySelector("#message") as HTMLTextAreaElement)
-      ?.value;
+    const name = (form.querySelector('#name') as HTMLInputElement)?.value
+    const email = (form.querySelector('#email') as HTMLInputElement)?.value
+    const message = (form.querySelector('#message') as HTMLTextAreaElement)?.value
 
-    const botToken = "7714688405:AAHWRmehW1okIEFFA_DjhJYyw4EYAshTVkc";
-    const chatId = "-1002554967796";
+    const botToken = '7714688405:AAHWRmehW1okIEFFA_DjhJYyw4EYAshTVkc'
+    const chatId = '-1002554967796'
 
-    const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n💬 Сообщение: ${message}`;
+    const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n💬 Сообщение: ${message}`
 
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         chat_id: chatId,
         text,
       }),
-    });
+    })
 
-    setIsSuccessModalOpen(true);
-    form.reset();
-  };
+    setIsSuccessModalOpen(true)
+    form.reset()
+  }
 
   return (
     <>
@@ -68,9 +68,7 @@ const Contact = () => {
                 className="inline-flex items-center space-x-2 bg-gray-800/30 backdrop-blur-sm px-4 py-2 rounded-full border border-teal-500/20 mb-6"
               >
                 <span className="flex h-2 w-2 rounded-full bg-teal-400"></span>
-                <span className="text-sm font-medium">
-                  Начнем сотрудничество
-                </span>
+                <span className="text-sm font-medium">Начнем сотрудничество</span>
               </motion.div>
 
               <motion.h2
@@ -90,9 +88,8 @@ const Contact = () => {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="text-lg text-gray-200 mb-8"
               >
-                Свяжитесь с нами, чтобы получить бесплатную консультацию и
-                оценку вашего проекта. Мы поможем вам воплотить ваши идеи в
-                жизнь.
+                Свяжитесь с нами, чтобы получить бесплатную консультацию и оценку вашего проекта. Мы
+                поможем вам воплотить ваши идеи в жизнь.
               </motion.p>
 
               {/* <motion.div
@@ -134,20 +131,11 @@ const Contact = () => {
               <div className="bg-gray-900 rounded-2xl shadow-2xl p-8 relative overflow-hidden border border-gray-800">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-b from-teal-500/10 to-transparent rounded-full transform translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-                <h3 className="text-2xl font-bold mb-6 text-white">
-                  Отправьте заявку
-                </h3>
+                <h3 className="text-2xl font-bold mb-6 text-white">Отправьте заявку</h3>
 
-                <form
-                  ref={formRef}
-                  className="space-y-4"
-                  onSubmit={handleSubmit}
-                >
+                <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
                   <div className="space-y-2">
-                    <label
-                      htmlFor="name"
-                      className="text-sm font-medium text-gray-300"
-                    >
+                    <label htmlFor="name" className="text-sm font-medium text-gray-300">
                       Имя
                     </label>
                     <input
@@ -158,10 +146,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label
-                      htmlFor="email"
-                      className="text-sm font-medium text-gray-300"
-                    >
+                    <label htmlFor="email" className="text-sm font-medium text-gray-300">
                       Email
                     </label>
                     <input
@@ -173,10 +158,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-medium text-gray-300"
-                    >
+                    <label htmlFor="message" className="text-sm font-medium text-gray-300">
                       Сообщение
                     </label>
                     <textarea
@@ -211,7 +193,7 @@ const Contact = () => {
         message="Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время."
       />
     </>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,10 +1,12 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Smartphone } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { FloatingIcons } from "@/components/floating-icons";
-import { MouseParallax } from "../mouse-parallax";
+import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+import { ArrowRight, Smartphone } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { MouseParallax } from '../mouse-parallax'
+import { FloatingIcons } from '@/components/floating-icons'
 
 const Intro = () => {
   return (
@@ -37,8 +39,8 @@ const Intro = () => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 className="text-lg md:text-xl text-gray-300 max-w-xl"
               >
-                Создаем современные решения под ключ для вашего бизнеса с
-                фокусом на результат и пользовательский опыт
+                Создаем современные решения под ключ для вашего бизнеса с фокусом на результат и
+                пользовательский опыт
               </motion.p>
             </div>
 
@@ -48,7 +50,7 @@ const Intro = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-wrap gap-4"
             >
-              <Link href={"/#contact"}>
+              <Link href={'/#contact'}>
                 <Button
                   size="lg"
                   className="bg-teal-600 hover:bg-teal-700 text-gray-950 rounded-full px-8 group"
@@ -60,7 +62,7 @@ const Intro = () => {
                     transition={{
                       repeat: Number.POSITIVE_INFINITY,
                       duration: 1.5,
-                      ease: "easeInOut",
+                      ease: 'easeInOut',
                     }}
                   >
                     <ArrowRight className="h-4 w-4" />
@@ -68,7 +70,7 @@ const Intro = () => {
                 </Button>
               </Link>
 
-              <Link href={"/#projects"}>
+              <Link href={'/#projects'}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -134,8 +136,8 @@ const Intro = () => {
                         </div>
                         <div>
                           <h3 className="font-medium text-white">
-                            Разрабатываем функциональные и уникальные сайты
-                            специально для вашего бизнеса
+                            Разрабатываем функциональные и уникальные сайты специально для вашего
+                            бизнеса
                           </h3>
                           <p className="text-xs text-gray-400">iOS & Android</p>
                         </div>
@@ -168,9 +170,7 @@ const Intro = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-400">
-                      Рост конверсии
-                    </p>
+                    <p className="text-xs font-medium text-gray-400">Рост конверсии</p>
                     <p className="text-lg font-bold text-green-400">+45%</p>
                   </div>
                 </div>
@@ -199,9 +199,7 @@ const Intro = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-gray-400">
-                      Рост продаж
-                    </p>
+                    <p className="text-xs font-medium text-gray-400">Рост продаж</p>
                     <p className="text-lg font-bold text-blue-400">+120%</p>
                   </div>
                 </div>
@@ -228,7 +226,7 @@ const Intro = () => {
             transition={{
               repeat: Number.POSITIVE_INFINITY,
               duration: 1.5,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           >
             <svg
@@ -248,7 +246,7 @@ const Intro = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro

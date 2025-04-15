@@ -1,8 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link'
+import Image from 'next/image'
 
-import { Button } from "../ui/button";
-import HoomoLogo from "@/public/hoomo-logo.png";
+import { Button } from '../ui/button'
+
+import HoomoLogo from '@/public/hoomo-logo.png'
 
 const Header = () => {
   return (
@@ -46,10 +47,7 @@ const Header = () => {
           >
             Проекты
           </Link>
-          <Link
-            href="#about"
-            className="text-sm font-medium hover:text-teal-400 transition-colors"
-          >
+          <Link href="#about" className="text-sm font-medium hover:text-teal-400 transition-colors">
             О нас
           </Link>
           <Link
@@ -59,14 +57,14 @@ const Header = () => {
             Контакты
           </Link>
         </nav>
-        <Link href={"/#contact"}>
+        <Link href={'/#contact'}>
           <Button className="bg-teal-600 hover:bg-teal-700 text-gray-950 rounded-full px-6">
             Связаться
           </Button>
         </Link>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
