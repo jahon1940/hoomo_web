@@ -12,7 +12,7 @@ interface DevelopmentStageProps {
   index: number
 }
 
-export function DevelopmentStage({
+export function StageCard({
   number,
   title,
   description,
