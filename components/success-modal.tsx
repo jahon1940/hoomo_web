@@ -57,9 +57,9 @@ export function SuccessModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md"
+            className="fixed left-1/2 top-1/2 px-4 md:p-0 !-translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md"
           >
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="bg-gray-900 border relative border-gray-800 rounded-2xl shadow-2xl overflow-hidden">
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
