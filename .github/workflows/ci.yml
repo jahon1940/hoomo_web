@@ -34,6 +34,6 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }}
             git pull origin master
             rm -rf .next
-            npm install --legacy-peer-deps
+            npm install
             npm run build
             pm2 restart hoomo-next
