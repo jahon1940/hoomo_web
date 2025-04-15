@@ -20,6 +20,7 @@ const Contact = () => {
 
     const botToken = "7714688405:AAHWRmehW1okIEFFA_DjhJYyw4EYAshTVkc";
     const chatId = "-1002554967796";
+
     const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n💬 Сообщение: ${message}`;
 
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
