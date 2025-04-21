@@ -3,28 +3,28 @@ import { ShoppingCart, Smartphone, Target, Wrench } from 'lucide-react'
 
 const items = [
   {
-    icon: <Smartphone className="h-6 w-6 text-teal-400" />,
+    icon: <Smartphone className="h-6 w-6 text-white" />,
     title: 'Мобильные приложения под iOS и Android',
     description: 'Нативная и кроссплатформенная разработка для всех устройств',
     color: 'from-teal-500 to-cyan-600',
     delay: 0,
   },
   {
-    icon: <ShoppingCart className="h-6 w-6 text-teal-400" />,
+    icon: <ShoppingCart className="h-6 w-6 text-white" />,
     title: 'Онлайн-магазины, которые продают',
     description: 'Эффективные e-commerce решения с высокой конверсией',
     color: 'from-emerald-500 to-green-600',
     delay: 0.1,
   },
   {
-    icon: <Wrench className="h-6 w-6 text-teal-400" />,
+    icon: <Wrench className="h-6 w-6 text-white" />,
     title: 'Интеграции с CRM, CMS',
     description: 'Бесшовное подключение к вашим существующим системам',
     color: 'from-cyan-500 to-blue-600',
     delay: 0.2,
   },
   {
-    icon: <Target className="h-6 w-6 text-teal-400" />,
+    icon: <Target className="h-6 w-6 text-white" />,
     title: 'Поддержка, масштабирование и рост',
     description: 'Долгосрочное сопровождение и развитие вашего продукта',
     color: 'from-amber-500 to-orange-600',

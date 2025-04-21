@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-import { ArrowRight, Smartphone } from 'lucide-react'
+import { ArrowRight, Boxes } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { MouseParallax } from '../mouse-parallax'
@@ -131,15 +131,15 @@ const Intro = () => {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="bg-gray-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 rounded-full bg-teal-900/50 flex items-center justify-center">
-                          <Smartphone className="h-5 w-5 text-teal-400" />
+                        <div className="w-10 shrink-0 h-10 rounded-full bg-teal-900/50 flex items-center justify-center">
+                          <Boxes className="h-5 w-5 text-teal-400" />
                         </div>
-                        <div>
+                        <div className="flex flex-col gap-2">
                           <h3 className="font-medium text-white">
                             Разрабатываем функциональные и уникальные сайты специально для вашего
                             бизнеса
                           </h3>
-                          <p className="text-xs text-gray-400">iOS & Android</p>
+                          <p className="text-xs text-gray-400">Web & Mobile development</p>
                         </div>
                       </div>
                     </div>

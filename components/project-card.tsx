@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
+import { twMerge } from 'tailwind-merge'
 
 interface ProjectCardProps {
   title: string
@@ -25,7 +26,8 @@ export function ProjectCard({ title, description, image, color, index, mimage }:
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-100 z-10" />
       <div
-        className={`absolute inset-0 bg-gradient-to-br ${color} mix-blend-multiply opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10`}
+        // className={`absolute inset-0 bg-gradient-to-br ${color} mix-blend-multiply opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10`}
+        className={`absolute inset-0 bg-gradient-to-br mix-blend-multiply opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10`}
       />
 
       <Image
@@ -42,7 +44,10 @@ export function ProjectCard({ title, description, image, color, index, mimage }:
           alt={title}
           width={600}
           height={400}
-          className="absolute right-10 top-10 object-contain rounded-xl w-[180px] shadow-2xl border-4 border-white/50"
+          className={twMerge(
+            'absolute right-10 top-10 object-contain rounded-xl w-[180px] shadow-2xl border-4',
+            index === 0 ? 'border-white' : 'border-black'
+          )}
         />
       ) : null}
 

@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { Quote } from 'lucide-react'
+import Link from 'next/link'
 
 interface TestimonialCardProps {
   quote: string
@@ -11,6 +11,7 @@ interface TestimonialCardProps {
   company: string
   image: string
   index: number
+  link: string
 }
 
 export function TestimonialCard({
@@ -20,6 +21,7 @@ export function TestimonialCard({
   company,
   image,
   index,
+  link,
 }: TestimonialCardProps) {
   return (
     <motion.div
@@ -29,10 +31,8 @@ export function TestimonialCard({
       transition={{ delay: index * 0.1, duration: 0.5 }}
       className="bg-gray-800 rounded-2xl flex flex-col p-6 md:p-8 border border-gray-700 shadow-lg relative overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-teal-900/20 to-transparent rounded-full transform translate-x-1/2 -translate-y-1/2" />
 
-      {/* Quote icon */}
       <div className="absolute top-6 right-6 text-teal-500/20">
         <Quote className="h-16 w-16" />
       </div>
@@ -56,7 +56,10 @@ export function TestimonialCard({
         <div>
           <h4 className="font-bold text-white">{author}</h4>
           <p className="text-sm text-gray-400">
-            {position}, <span className="text-teal-400">{company}</span>
+            {position},{' '}
+            <Link href={link} className="text-teal-400 hover:underline">
+              {company}
+            </Link>
           </p>
         </div>
         {/* </div> */}

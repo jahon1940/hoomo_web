@@ -8,6 +8,7 @@ const testimonials = [
     author: 'Сарвар Рашдов',
     position: 'Руководитель Mirel Group',
     company: 'mirel.uz',
+    companyLink: 'https://mirel.uz/',
     image: '/placeholder.svg?height=100&width=100&text=АС',
   },
   {
@@ -16,6 +17,7 @@ const testimonials = [
     author: 'Лазеров Виктор',
     position: 'Директор OOO Kansler',
     company: 'kansler.uz',
+    companyLink: 'https://kansler.uz/',
     image: '/placeholder.svg?height=100&width=100&text=ЕП',
   },
   {
@@ -23,7 +25,8 @@ const testimonials = [
       'Сотрудничество прошло на высоком уровне: от проектирования UX до публикации в App Store и Google Play. Приложение получилось современным и функциональным, сайт адаптирован под все устройства. Спасибо за профессионализм, прозрачность и поддержку на всех этапах.',
     author: '',
     position: 'Руководитель компании',
-    company: 'Texnostore.uz',
+    company: 'kanstik.uz',
+    companyLink: 'https://kanstik.uz/',
     image: '/placeholder.svg?height=100&width=100&text=ДК',
   },
 ]
@@ -82,6 +85,7 @@ const Testimonials = () => {
               author={testimonial.author}
               position={testimonial.position}
               company={testimonial.company}
+              link={testimonial.companyLink}
               image={testimonial.image}
               index={index}
             />
