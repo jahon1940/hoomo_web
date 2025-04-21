@@ -8,7 +8,7 @@ import type { ReactNode } from 'react'
 
 import './globals.css'
 
-import Favicon from '@/public/hoomo-logo.png'
+import Favicon from '@/public/favicon.png'
 
 const inter = Open_Sans({
   subsets: ['latin-ext'],
