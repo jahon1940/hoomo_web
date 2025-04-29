@@ -15,13 +15,13 @@ const Contact = () => {
     if (!form) return
 
     const name = (form.querySelector('#name') as HTMLInputElement)?.value
-    const email = (form.querySelector('#email') as HTMLInputElement)?.value
+    const phone = (form.querySelector('#phone') as HTMLInputElement)?.value
     const message = (form.querySelector('#message') as HTMLTextAreaElement)?.value
 
     const botToken = '7714688405:AAHWRmehW1okIEFFA_DjhJYyw4EYAshTVkc'
     const chatId = '-1002554967796'
 
-    const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n💬 Сообщение: ${message}`
+    const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Тел.: ${phone}\n💬 Сообщение: ${message}`
 
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
@@ -139,6 +139,7 @@ const Contact = () => {
                       Имя
                     </label>
                     <input
+                      required
                       id="name"
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-white"
                       placeholder="Ваше имя"
@@ -146,14 +147,16 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-gray-300">
-                      Email
+                    <label htmlFor="phone" className="text-sm font-medium text-gray-300">
+                      Номер телефона
                     </label>
                     <input
-                      id="email"
-                      type="email"
+                      id="phone"
+                      type="tel"
+                      pattern="^\+998\d{9}$"
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-white"
-                      placeholder="your@email.com"
+                      placeholder="+998 90 123 4567"
+                      required
                     />
                   </div>
 
@@ -162,10 +165,11 @@ const Contact = () => {
                       Сообщение
                     </label>
                     <textarea
+                      required
                       id="message"
                       className="w-full resize-none px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent min-h-[120px] text-white"
                       placeholder="Расскажите о вашем проекте"
-                    ></textarea>
+                    />
                   </div>
 
                   <FormSubmitButton
